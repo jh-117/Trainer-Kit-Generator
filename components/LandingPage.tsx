@@ -13,8 +13,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStart, onBrowseTempl
       {/* Hero Section */}
       <div className="text-center space-y-8 pt-10 pb-10">
         <div className="inline-flex items-center px-3 py-1 rounded-full border border-indigo-100 bg-indigo-50 text-indigo-600 text-sm font-medium mb-4 animate-in fade-in slide-in-from-bottom-4 delay-100">
-          <Sparkles className="w-4 h-4 mr-2" />
-          <span>Powered by Gemini 2.5 Flash</span>
+          
+         
         </div>
         
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-tight animate-in fade-in slide-in-from-bottom-6 delay-200">
