@@ -90,9 +90,7 @@ const App: React.FC = () => {
             </div>
             <span className="font-bold text-xl tracking-tight text-slate-900">TrainerKit GenAI</span>
           </div>
-          <div className="text-sm text-slate-500 hidden sm:block font-medium">
-            Powered by Google Gemini 2.5 Flash
-          </div>
+        
         </div>
       </header>
 
