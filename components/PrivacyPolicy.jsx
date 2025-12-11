@@ -29,8 +29,7 @@ function PrivacyPolicy() {
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-3">1. Introduction</h2>
               <p className="text-gray-700">
-                This Knowledge Librarian Resource Center ("the System") is designed to capture 
-                and retain institutional knowledge from departing employees in an anonymous manner. 
+                TrainerKit GenAI ("the Service") is an AI-powered training material generator. 
                 This privacy policy explains how we collect, use, and protect your information.
               </p>
             </section>
@@ -38,96 +37,127 @@ function PrivacyPolicy() {
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-3">2. Information We Collect</h2>
               
-              <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">From Uploaders (Departing Employees):</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">User Input Data:</h3>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li><strong>Work-related information:</strong> Role context, responsibilities, tools, skills, processes, and advice</li>
-                <li><strong>Files:</strong> Process documents, templates, and work examples</li>
-                <li><strong>Metadata:</strong> Department, position level, experience range, team size (no names or emails)</li>
+                <li><strong>Training Topics:</strong> The subject matter you provide for generating training materials</li>
+                <li><strong>Industry Selection:</strong> The industry context you select for customization</li>
+                <li><strong>Uploaded Files:</strong> Optional documents you provide for content generation</li>
+                <li><strong>Customization Preferences:</strong> Your choices for training material formats and styles</li>
               </ul>
 
-              <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">From Users (Admins/Seekers):</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">Usage Information:</h3>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li><strong>Account information:</strong> Email address and encrypted password</li>
-                <li><strong>Usage data:</strong> Login timestamps, search queries (for system improvement only)</li>
+                <li><strong>Anonymous Usage Data:</strong> General statistics about feature usage and performance</li>
+                <li><strong>Session Information:</strong> Temporary data during your active session</li>
+              </ul>
+
+              <p className="text-gray-700 mt-4 p-4 bg-blue-50 rounded-lg">
+                <strong>Important:</strong> We do <strong>not</strong> collect:
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Personal identification information (name, email, company details)</li>
+                  <li>Payment information (our service is free)</li>
+                  <li>User accounts or login credentials</li>
+                  <li>Contact information or demographic data</li>
+                </ul>
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">3. How We Use Your Information</h2>
+              <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                <li><strong>Content Generation:</strong> To create training materials (PPT, guides, handouts, flashcards) based on your input</li>
+                <li><strong>AI Processing:</strong> To analyze your topic and industry to generate relevant content</li>
+                <li><strong>Improvement:</strong> To enhance our AI models and service quality</li>
+                <li><strong>Temporary Storage:</strong> To maintain your session while generating materials</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">3. Anonymity & Data Minimization</h2>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">4. Data Processing & AI Services</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li>Submissions are completely anonymous - no personal identifiers are collected or stored</li>
-                <li>Uploaded files are renamed to random identifiers (UUIDs)</li>
-                <li>One-time upload codes expire after 24 hours and cannot be traced back to individuals</li>
-                <li>AI processing scans for and flags potential personal information before approval</li>
+                <li><strong>Kadosh AI/OpenAI:</strong> Your input data is processed by AI models to generate training content</li>
+                <li><strong>Content Analysis:</strong> Uploaded documents are analyzed solely for content extraction and training material generation</li>
+                <li><strong>No Training Data:</strong> Your specific inputs are not used to train AI models beyond your immediate session</li>
+                <li><strong>Temporary Processing:</strong> Data is processed in real-time and not stored for future model training</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">4. How We Use Your Information</h2>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">5. Data Storage & Retention</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li><strong>Knowledge Retention:</strong> To preserve and share institutional knowledge within the organization</li>
-                <li><strong>AI Processing:</strong> To automatically summarize, categorize, and extract keywords from submissions</li>
-                <li><strong>Search & Discovery:</strong> To enable current employees to find relevant knowledge and resources</li>
-                <li><strong>System Administration:</strong> To manage user accounts and moderate content</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">5. Data Sharing & Third Parties</h2>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li><strong>OpenAI API:</strong> Anonymous submission content is processed by OpenAI for summarization (no personal data sent)</li>
-                <li><strong>Supabase:</strong> Data storage and authentication provider (GDPR/SOC 2 compliant)</li>
-                <li><strong>No external sharing:</strong> Your data is never sold or shared with third parties for marketing</li>
+                <li><strong>Input Data:</strong> Temporarily stored during your session (deleted after completion)</li>
+                <li><strong>Generated Materials:</strong> Available for download only; not stored on our servers</li>
+                <li><strong>Uploaded Files:</strong> Processed and deleted after generation completes</li>
+                <li><strong>Session Data:</strong> Cleared when you close your browser or end your session</li>
+                <li><strong>Anonymous Analytics:</strong> Aggregated usage statistics retained for service improvement</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-3">6. Data Security</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li>Industry-standard encryption for data in transit and at rest</li>
-                <li>Row-level security policies to prevent unauthorized access</li>
-                <li>Private storage buckets for uploaded files</li>
-                <li>Regular security audits and updates</li>
+                <li>Secure transmission using HTTPS/SSL encryption</li>
+                <li>No permanent storage of personal or sensitive information</li>
+                <li>Regular security monitoring and updates</li>
+                <li>Automatic data cleanup of temporary files</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">7. Data Retention</h2>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">7. Third-Party Services</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li><strong>Approved submissions:</strong> Retained indefinitely for organizational knowledge</li>
-                <li><strong>Rejected submissions:</strong> Deleted after 30 days</li>
-                <li><strong>Upload codes:</strong> Deleted 7 days after use</li>
-                <li><strong>User accounts:</strong> Retained while employment is active</li>
+                <li><strong>AI Providers:</strong> Content generation powered by Kadosh AI/OpenAI (subject to their privacy policies)</li>
+                <li><strong>Hosting Services:</strong> Secure cloud infrastructure for application hosting</li>
+                <li><strong>No Data Sharing:</strong> We do not sell, rent, or share your data with third parties for marketing or advertising</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">8. Your Rights</h2>
-              <p className="text-gray-700 mb-3">You have the right to:</p>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">8. Your Content & Intellectual Property</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li>Access your account information</li>
-                <li>Request deletion of your account</li>
-                <li>Withdraw consent (though anonymous submissions cannot be identified or deleted)</li>
-                <li>Raise concerns about data processing practices</li>
+                <li><strong>Your Inputs:</strong> You retain all rights to the topics and documents you provide</li>
+                <li><strong>Generated Materials:</strong> You own the training materials generated from your inputs</li>
+                <li><strong>AI-Generated Content:</strong> Content created by AI is provided for your use without restrictions</li>
+                <li><strong>Responsibility:</strong> You are responsible for ensuring your inputs and use of generated materials comply with applicable laws</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">9. Contact Information</h2>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">9. Children's Privacy</h2>
               <p className="text-gray-700">
-                For any privacy-related questions or concerns, please contact:<br />
-                <strong>Email:</strong> privacy@yourcompany.com<br />
-                <strong>Data Protection Officer:</strong> [Name/Department]
+                Our service is intended for professional training purposes and is not designed for 
+                or directed at children under 18 years of age. We do not knowingly collect any 
+                information from children.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-3">10. Changes to This Policy</h2>
               <p className="text-gray-700">
-                We may update this privacy policy from time to time. Changes will be posted on this page 
-                with an updated "Last Updated" date. Continued use of the system constitutes acceptance 
-                of any changes.
+                We may update this privacy policy to reflect changes in our practices or legal requirements. 
+                The updated version will be posted here with a revised "Last Updated" date. 
+                We encourage you to review this policy periodically.
               </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">11. Contact Information</h2>
+              <p className="text-gray-700">
+                If you have any questions about this Privacy Policy or our data practices, please contact:<br />
+                <strong>Email:</strong> privacy@trainerkit.ai<br />
+                <strong>Website:</strong> trainerkit.ai
+              </p>
+            </section>
+
+            <section className="mt-8 p-4 bg-gray-50 rounded-lg">
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">Quick Summary</h2>
+              <ul className="space-y-2 text-gray-700">
+                <li>✓ <strong>No accounts required</strong> - use instantly without registration</li>
+                <li>✓ <strong>No personal data collected</strong> - we don't ask for names or emails</li>
+                <li>✓ <strong>Your inputs are temporary</strong> - deleted after generation</li>
+                <li>✓ <strong>You own the output</strong> - generated materials are yours to use</li>
+                <li>✓ <strong>100% anonymous</strong> - no tracking or profiling</li>
+              </ul>
             </section>
           </div>
         </div>
