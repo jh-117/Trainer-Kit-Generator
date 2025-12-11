@@ -3,14 +3,12 @@ import { InputSection } from './components/InputSection';
 import { PlanReview } from './components/PlanReview';
 import { KitResults } from './components/KitResults';
 import { LandingPage } from './components/LandingPage';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import { generateTrainingPlan, generateFullKit } from './services/apiService';
+import { generateTrainingPlan, generateFullKit } from './services/geminiService';
 import { AppState, TrainingInput, TrainingPlan, GeneratedKit } from './types';
 import { Layers } from 'lucide-react';
 
 const App: React.FC = () => {
   const [state, setState] = useState<AppState>(AppState.LANDING);
-  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
   const [plan, setPlan] = useState<TrainingPlan | null>(null);
   const [kit, setKit] = useState<GeneratedKit | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -19,14 +17,12 @@ const App: React.FC = () => {
   const handleStart = () => {
     setInputTab('create');
     setState(AppState.INPUT);
-    setShowPrivacyPolicy(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleBrowseTemplates = () => {
     setInputTab('library');
     setState(AppState.INPUT);
-    setShowPrivacyPolicy(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -61,6 +57,7 @@ const App: React.FC = () => {
 
   const handleKitSelected = (selectedKit: GeneratedKit) => {
     setKit(selectedKit);
+    // Directly go to results as the kit is already "generated"
     setState(AppState.RESULTS);
     setError(null);
   };
@@ -77,35 +74,8 @@ const App: React.FC = () => {
     setPlan(null);
     setKit(null);
     setError(null);
-    setShowPrivacyPolicy(false);
   }
 
-  const handlePrivacyPolicyClick = () => {
-    setShowPrivacyPolicy(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handlePrivacyPolicyBack = () => {
-    setShowPrivacyPolicy(false);
-  };
-
-  // Show Privacy Policy Page (complete page with its own header/footer)
-  if (showPrivacyPolicy) {
-    return <PrivacyPolicy onBack={handlePrivacyPolicyBack} onHomeClick={handleHomeClick} />;
-  }
-
-  // Show Landing Page (complete page with its own header/footer)
-  if (state === AppState.LANDING) {
-    return (
-      <LandingPage 
-        onStart={handleStart} 
-        onBrowseTemplates={handleBrowseTemplates}
-        onPrivacyPolicyClick={handlePrivacyPolicyClick}
-      />
-    );
-  }
-
-  // Main App View (for INPUT, ANALYZING, REVIEW, GENERATING, RESULTS states)
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col">
       {/* Header */}
@@ -120,11 +90,22 @@ const App: React.FC = () => {
             </div>
             <span className="font-bold text-xl tracking-tight text-slate-900">TrainerKit GenAI</span>
           </div>
+        
         </div>
       </header>
 
       {/* Main Content */}
       <main className="flex-grow flex flex-col items-center justify-center p-4 sm:p-8 print:p-0 w-full relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        {state === AppState.LANDING && (
+           <>
+             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+               <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-200/30 rounded-full blur-[100px]" />
+               <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-200/30 rounded-full blur-[100px]" />
+             </div>
+           </>
+        )}
+
         {error && (
           <div className="mb-8 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg max-w-md w-full text-center relative z-10">
             {error}
@@ -132,6 +113,10 @@ const App: React.FC = () => {
         )}
 
         <div className="w-full relative z-10">
+          {state === AppState.LANDING && (
+            <LandingPage onStart={handleStart} onBrowseTemplates={handleBrowseTemplates} />
+          )}
+
           {state === AppState.INPUT || state === AppState.ANALYZING ? (
             <InputSection 
               onSubmit={handleInputSubmit}
