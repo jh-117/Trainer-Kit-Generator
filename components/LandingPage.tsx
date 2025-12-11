@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Sparkles, ArrowRight, Presentation, FileText, Zap, Download, Layers, Users } from 'lucide-react';
 import kadoshLogo from '../assets/kadoshAI.png';
 import BackgroundMusic from './BackgroundMusic';
 import themeMusic from '../assets/trainer-theme.mp3';
-import PrivacyPolicy from './PrivacyPolicy';
 
 interface LandingPageProps {
   onStart: () => void;
@@ -11,49 +11,15 @@ interface LandingPageProps {
 }
 
 export const LandingPage: React.FC<LandingPageProps> = ({ onStart, onBrowseTemplates }) => {
-  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
+  const navigate = useNavigate();
 
   const handlePrivacyPolicyClick = () => {
-    setShowPrivacyPolicy(true);
-  };
-
-  const handleClosePrivacyPolicy = () => {
-    setShowPrivacyPolicy(false);
+    navigate('/privacy-policy');
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 flex flex-col">
       <BackgroundMusic src={themeMusic} />
-      
-      {/* Privacy Policy Modal */}
-      {showPrivacyPolicy && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">Privacy Policy</h2>
-                <button
-                  onClick={handleClosePrivacyPolicy}
-                  className="text-gray-400 hover:text-gray-600 transition-colors"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              <PrivacyPolicy />
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <button
-                  onClick={handleClosePrivacyPolicy}
-                  className="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Navigation */}
       <nav className="bg-white shadow-sm border-b border-gray-200">
@@ -204,16 +170,16 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStart, onBrowseTempl
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Footer - Updated to match the image */}
       <footer className="bg-white border-t border-gray-200 mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col items-center justify-center space-y-6">
             
-            {/* Links */}
-            <div className="flex space-x-6 text-sm text-gray-600">
+            {/* Privacy Policy Link */}
+            <div className="text-center">
               <button 
                 onClick={handlePrivacyPolicyClick}
-                className="hover:text-indigo-600 font-medium transition-colors"
+                className="text-gray-600 hover:text-indigo-600 font-medium transition-colors text-base"
               >
                 Privacy Policy
               </button>
@@ -230,8 +196,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStart, onBrowseTempl
             </div>
 
             {/* Copyright */}
-            <p className="text-xs text-gray-400">
-              © {new Date().getFullYear()} TrainerKit GenAI. All rights reserved.
+            <p className="text-sm text-gray-400">
+              © {new Date().getFullYear()} Knowledge Librarian. All rights reserved.
             </p>
           </div>
         </div>
