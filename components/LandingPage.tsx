@@ -1,5 +1,8 @@
 import React from 'react';
 import { Sparkles, ArrowRight, Presentation, FileText, Zap, Download, Layers, Users } from 'lucide-react';
+import kadoshLogo from './assets/kadoshAI.png';
+import BackgroundMusic from './BackgroundMusic';
+import themeMusic from '../assets/librarian-theme.mp3';
 
 interface LandingPageProps {
   onStart: () => void;
