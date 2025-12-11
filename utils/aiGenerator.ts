@@ -1,25 +1,19 @@
 import { TrainingInput, TrainingPlan, GeneratedKit, Flashcard, Slide } from '../types';
+import { extractFileContent } from './fileParser';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-async function readFileAsText(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result as string);
-    reader.onerror = reject;
-    reader.readAsText(file);
-  });
-}
 
 export async function generateTrainingPlan(input: TrainingInput): Promise<TrainingPlan> {
   let fileContent: string | undefined;
 
   if (input.file) {
     try {
-      fileContent = await readFileAsText(input.file);
+      fileContent = await extractFileContent(input.file);
+      console.log('Extracted file content length:', fileContent.length);
     } catch (error) {
       console.error('Error reading file:', error);
+      throw new Error(`Failed to read file: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
   }
 

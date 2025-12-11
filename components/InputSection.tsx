@@ -138,6 +138,9 @@ export const InputSection: React.FC<InputSectionProps> = ({ onSubmit, onKitSelec
                 <label className="block text-sm font-medium text-slate-700">
                   Reference Material (Optional)
                 </label>
+                <p className="text-xs text-slate-500 mb-2">
+                  Upload a document to use as reference for the AI to generate more accurate training content
+                </p>
                 <div
                   className={`border-2 border-dashed rounded-xl p-8 text-center transition-colors cursor-pointer ${
                     file ? 'border-indigo-200 bg-indigo-50' : 'border-slate-200 hover:border-indigo-400 hover:bg-slate-50'
@@ -154,19 +157,24 @@ export const InputSection: React.FC<InputSectionProps> = ({ onSubmit, onKitSelec
                     onChange={handleFileChange}
                   />
                   {file ? (
-                    <div className="flex items-center justify-center space-x-3 text-indigo-700">
-                      <FileText className="w-8 h-8" />
-                      <span className="font-medium truncate max-w-[200px]">{file.name}</span>
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setFile(null);
-                        }}
-                        className="p-1 hover:bg-indigo-100 rounded-full"
-                      >
-                        <X className="w-5 h-5" />
-                      </button>
+                    <div className="flex flex-col items-center space-y-2">
+                      <div className="flex items-center space-x-3 text-indigo-700">
+                        <FileText className="w-8 h-8" />
+                        <span className="font-medium truncate max-w-[200px]">{file.name}</span>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setFile(null);
+                          }}
+                          className="p-1 hover:bg-indigo-100 rounded-full"
+                        >
+                          <X className="w-5 h-5" />
+                        </button>
+                      </div>
+                      <p className="text-xs text-indigo-600">
+                        ✓ This file will be used as reference material for AI generation
+                      </p>
                     </div>
                   ) : (
                     <div className="space-y-2 text-slate-500">

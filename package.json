@@ -12,6 +12,8 @@
     "jspdf": "2.5.1",
     "jszip": "3.10.1",
     "lucide-react": "^0.556.0",
+    "mammoth": "^1.11.0",
+    "pdfjs-dist": "^5.4.449",
     "pptxgenjs": "3.12.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
