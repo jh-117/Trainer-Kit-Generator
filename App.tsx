@@ -6,6 +6,7 @@ import { LandingPage } from './components/LandingPage';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import { AppState, TrainingInput, TrainingPlan, GeneratedKit } from './types';
 import { Layers } from 'lucide-react';
+import { generateTrainingPlan, generateFullKit } from './utils/aiGenerator';
 
 const App: React.FC = () => {
   const [state, setState] = useState<AppState>(AppState.LANDING);
