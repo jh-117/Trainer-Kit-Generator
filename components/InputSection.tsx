@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Upload, FileText, X, Briefcase, BookOpen, ArrowRight, Wand2, LayoutTemplate } from 'lucide-react';
 import { TrainingInput, GeneratedKit } from '../types';
 import { LibrarySelector } from './LibrarySelector';
-import { getPreGeneratedKit } from '../services/mockData';
+
 
 interface InputSectionProps {
   onSubmit: (input: TrainingInput) => void;
